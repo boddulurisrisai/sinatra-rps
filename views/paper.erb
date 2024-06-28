@@ -1,0 +1,21 @@
+<% array = ["paper", "rock", "scissors"]
+  @theypicked = array.sample
+  @outcome =""
+  @wepicked = "paper"
+  %>
+<b><h2>We played <%= @wepicked %>!</h2><b>
+
+
+<b><h2>They played <%= @theypicked %>!</h2></b>
+<% if @wepicked == @theypicked
+@outcome = "tied"
+elsif ((@wepicked == "rock" && @theypicked == "scissors") || (@wepicked == "paper" && @theypicked == "rock") || (@wepicked == "scissors" && @theypicked == "paper"))
+@outcome ="won"
+else
+@outcome ="lost"
+end
+%>
+<b><h2>We <%= @outcome %>!</h2></b>
+
+
+<div><a href="/">Rules</a></div>
